@@ -215,6 +215,7 @@ int np_net_ssl_check_cert(int days_till_exp_warn, int days_till_exp_crit){
 	tm_t = mktime (&stamp);
 	strftime(timestamp, 50, "%c", localtime(&tm_t));
 
+	# Travis Push
 	if (days_left > 0 && days_left <= days_till_exp_warn) {
 		printf (_("%s - Certificate '%s' expires in %d day(s) (%s).\n"), (days_left>days_till_exp_crit)?"WARNING":"CRITICAL", cn, days_left, timestamp);
 		if (days_left > days_till_exp_crit)
